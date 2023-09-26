@@ -3,7 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.16'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'info.solidsoft.pitest' version '1.9.11'
-	id 'com.netflix.nebula.override' version '4.0.0'
+//	id 'com.netflix.nebula.override' version '4.0.0' // to overide the properties
 }
 
 group = 'com.example'
@@ -38,7 +38,7 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-build.dependsOn 'pitest'
+// build.dependsOn 'pitest' // to add in the build task
 
 pitest {
 	//adds dependency to org.pitest:pitest-junit5-plugin and sets "testPlugin" to "junit5"
