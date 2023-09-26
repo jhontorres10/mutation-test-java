@@ -5,7 +5,7 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  build_and_test_pitest:
+  test_pitest:
     docker:
       - image: circleci/openjdk:11-jdk
     steps:
@@ -14,7 +14,17 @@ jobs:
           command: |
             ./gradlew pitest
 
+  unit_tests:
+    docker:
+      - image: circleci/openjdk:11-jdk
+    steps:
+      - checkout
+      - run:
+          command: |
+            ./gradlew test
+
 workflows:
   pitest:
     jobs:
-      - build_and_test_pitest
+      - test_pitest
+      - unit_tests
