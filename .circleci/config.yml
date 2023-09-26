@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           command: |
-            ./gradlew pitest
+            ./gradlew pitest --Doverride.pitest.mutationThreshold=80
 
 workflows:
   pitest:
