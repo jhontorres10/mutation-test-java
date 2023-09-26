@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,7 +16,6 @@ class MyServiceValidatorTest {
 
 
     @Test
-    @Disabled
     void fiftyReturnsTrue() {
         assertThat(myServiceValidator.isValid(50)).isTrue();
     }
@@ -28,7 +26,6 @@ class MyServiceValidatorTest {
     }
 
     @Test
-    @Disabled
     void twoHundredReturnsFalse() {
         assertThat(myServiceValidator.isValid(0)).isFalse();
     }
